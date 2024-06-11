@@ -6,22 +6,54 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-  }
-  
-.todo-header{
-color: #786032  ;
 }
 
-.todo-input{
-    width: 250px;
-    height: 40px;
-    background-color:  #867;;
-    color: bisque;
+.shopping-container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.input-button{
-    width: 90px;
-    height: 40px;
-    background-color: bisque;
-    color: #867;
+.shopping-input, .shopping-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.shopping-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.shopping-button:hover {
+    background-color: #218838;
+}
+
+.shopping-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shopping-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-list li.bought {
+    text-decoration: line-through;
+    color: #6c757d;
 }
