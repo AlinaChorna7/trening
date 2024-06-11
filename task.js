@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', () =>{
-    const itemInput = document.getElementById('item-input');
-    const addItemButton = document.getElementById('add-item');
-    const itemList = document.getElementById('item-list');
+    const nameInput = document.getElementById('contact-name');
+    const phoneInput = document.getElementById('contact-phone');
+    const addButton   = document.getElementById('add-contact');
+    const contactList = document.getElementById('contact-list')
 
-    addButton.addEventListener('click', () =>{
-        const itemText = itemInput.value.trim();
-if (itemText !== ''){
-const listItem = document.createElement('li');
-listItem.innerHTML =     `<span class="item-text">${itemText}</span>
-<button class="delete-btn">Delete</button>`
-itemList.appendChild(listItem);
-itemInput.value = '';
-};
+    addButton.addEventListener('click', ()=>{
+        const nameItem = nameInput.value.trim();
+        const phoneItem = phoneInput.value.trim();
+        if (nameInput !== '' && phoneInput !== ''){
+const contactList = document.createElement('li');
+listItem.innerHTML = `<span class="contact-name">${nameItem}</span>
+<span class="contact-phone">${phoneItem}</span>
+<button class="delete-btn">Delete</button>`;
+listItem.appendChild(contactList);
+nameInput.value = '';
+phoneInput.value = '';
+        } else{
+            alert ('Please enter both name and phone number.');
+        };
+
+
     });
 
-    itemList.addEventListener('click', (event)=>{
-        const target = event.target;
-        if(target.classList.contains('delet-btn')){
-            target.parentElement.remove();
-        } else if ( target.classList.contains('item-text')){
-            target.parentElement.classList.toggle('bought')
+    contactList.addEventListener('click', (event) =>{
+        
+        if(event.target.classList.contains('delete-btn')){
+            event.target.parentElement.remove()
         }
     })
 })
